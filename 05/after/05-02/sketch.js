@@ -2,9 +2,10 @@ var x;                                 //x座標用の変数
 var y;                                 //y座標用の変数
 var d;                                 //○の直径用の変数
 
+var xMove1;                            //動かすBall用のx座標用の変数1
 var yMove1;                            //動かすBall用のy座標用の変数1
-var xMove1;                            //動かすBall用のx座標用の変数2
-var xMove2;                            //動かすBall用のy座標用の変数2
+var xMove2;                            //動かすBall用のx座標用の変数2
+var yMove2;                            //動かすBall用のy座標用の変数2
 var xSpeed1;                           //動かすBall用のx座標の移動量の変数1
 var ySpeed1;                           //動かすBall用のy座標の移動量の変数1
 var xSpeed2;                           //動かすBall用のx座標の移動量の変数2

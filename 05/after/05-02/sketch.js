@@ -64,10 +64,15 @@ function draw() {
 
 //Arrow
 function Arrow(_x, _y, _d) {
-  var x, y, d;
-  x = _x;
-  y = _y;
-  d = _d;
+	//関数Arrow内での変数を宣言
+	var x;
+	var y;
+	var d;
+	
+	//関数Arrow内での変数に引数を設定
+	x = _x;                            //引数 _xを受け取る
+	y = _y;                            //引数 _yを受け取る
+	d = _d;                            //引数 _dを受け取る
 	
   ellipse(x, y, d, d);
 	ellipse(x + d,   y - d,   d, d);

@@ -1,4 +1,3 @@
-
 //変数を宣言
 var MAX;          //雪の最大数
 
@@ -14,7 +13,6 @@ function setup() {
 	createCanvas(500, 400);
 	background(51,54,49); 
 	noStroke();
-
 
 //初期化
 	MAX = 100;
@@ -46,7 +44,7 @@ function draw() {
 		Snow(x[i],y[i],d[i],a[i]);　　　　　　　//Snow関数を実行
 
 		x[i] = x[i] + swing;　　　　　　　　　　//Snowのx座標にて揺れの値を追加して揺らす
-		y[i] = y[i] + ySpeed[i];                
+		y[i] = y[i] + ySpeed[i];
 
 		//画面の下まで移動したらstartPositionへ
 		if (y[i] > height) {

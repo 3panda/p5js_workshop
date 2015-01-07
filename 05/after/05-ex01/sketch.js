@@ -1,4 +1,5 @@
-function setup() {
+function setup()
+{
 	createCanvas(500, 400);
 	background(51,54,49);
 
@@ -15,38 +16,35 @@ function draw() {
 	Flower(20, 0, 0);
 	
 	//花を8枚円形に描く
-	for(var i= 0; i < 8; i++)
-	{
+	for(var i= 0; i < 8; i++) {
 		rotate(PI/4);　　　　　　　　　　　   //傾きを60度加える
 		Flower(10, 100, 100);                  //花を描画
 	}
 	pop();
+
 }
 
 
 //Flower
 function Flower(_d, _x, _y) {
-	var d = _d;                              //中心の円の半径
-
 	//※中心の円の半径基準に以下を描画
 	var xPos =  _x;
 	var yPos =  _y;
 
 	//※以下は中心の円を基準に描画
-	var p_yPos   = d*2;　　　　　　　　　    //花びらのY座標は中心の円の二倍 ※X座標は0
-	var p_width  = d;　　　　　　　　　      //花びらの幅 中心の円の直径
-	var p_height = d*3;　　　　　　　　　    //花びらの縦幅 中心の円の直径の三倍
+	var p_yPos   = _d*2;　　　　　　　　　    //花びらのY座標は中心の円の二倍 ※X座標は0
+	var p_width  = _d;　　　　　　　　　      //花びらの幅 中心の円の直径
+	var p_height = _d*3;　　　　　　　　　    //花びらの縦幅 中心の円の直径の三倍
 
 	fill(204, 101, 192);                     //花の中心の塗り
 	noStroke();　　　　　　　　　　　　　    //枠線は無し
-	ellipse(xPos, yPos, d, d);               //花の中心を描画
+	ellipse(xPos, yPos, _d, _d);               //花の中心を描画
 	push();                                  //描画の状態を初期化
 
 	translate(xPos, yPos);                   //描画の基準位置を中心の円の座標に変更
 	fill(100, 101, 192);　　　　　　　　　   //花びらの塗りの指定
 	//花びらを8枚描画
-	for (var i = 0; i < 8; i++) 
-	{
+	for (var i = 0; i < 8; i++) {
 		rotate(PI/4.0);　　　　　　　　　　    //10度づつ傾ける
 		ellipse(0, p_yPos, p_width, p_height); //花びらの描画
 	}

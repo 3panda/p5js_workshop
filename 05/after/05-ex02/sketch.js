@@ -1,14 +1,14 @@
 
 //変数を宣言
-var MAX;             //雪の最大数
+var MAX;          //雪の最大数
 
 //配列を宣言
-var x = [];          //雪のx座標の配列
-var y = [];          //雪のy座標の配列
-var d = [];          //雪の直径の配列
-var r = [];          //雪の半径の配列
-var a = [];          //雪の透明度の配列
-var ySpeed = [];     //雪の移動速度の配列
+var x = [];       //雪のx座標の配列
+var y = [];       //雪のy座標の配列
+var d = [];       //雪の直径の配列
+var r = [];       //雪の半径の配列
+var a = [];       //雪の透明度の配列
+var ySpeed = [];  //雪の移動速度の配列
 
 function setup() {
 	createCanvas(500, 400);
@@ -38,28 +38,29 @@ function setup() {
 
 function draw() {
 	background(51,54,49);
+	var swing;                                //横に少し揺らすための変数を宣言
+	var startPosition = 10;                   //画面の外に出たら戻す位置
 
 	for (var i =0; i < MAX; i++) {
-		Snows(i);
+		swing =  random(-0.05, 0.05) * d[i];    //乱数に雪の大きさを乗算して揺れの値を作る
+		Snow(x[i],y[i],d[i],a[i]);　　　　　　　//Snow関数を実行
+
+		x[i] = x[i] + swing;　　　　　　　　　　//Snowのx座標にて揺れの値を追加して揺らす
+		y[i] = y[i] + ySpeed[i];                
+
+		//画面の下まで移動したらstartPositionへ
+		if (y[i] > height) {
+			y[i] = startPosition;
+		}
+
 	}
 
 }
 
-//Snows
-function Snows (_i) {
-	var i = _i;                             //for文のiを代入
-	var swing =  random(-0.5, 0.5);　　　　 //左右の横揺れのためにランダムで値を作成
-	var s = 10;                             //画面の縦の端(height)まで来たら戻る位置
 
-	fill(255, 255, 255, a[i]);
-	ellipse(x[i], y[i], d[i], d[i]);
-
-	x[i] = x[i] + swing;
-	y[i] = y[i] + ySpeed[i];
-
-	//画面の一番下までいったらsまでもどる
-	if (y[i] > height) {
-		y[i] = s;
-	}
-	
+//Snow関数
+function Snow (_x, _y, _d, _a) {
+	fill(255, 255, 255, _a);
+	ellipse(_x, _y, _d, _d);
 }
+

@@ -30,10 +30,10 @@ function setup() {
 	ellipse(250 + d*2,  120 + 20*2, 20, 20);      //中心の○から,○2つ分左,○2つ分斜め下
 */
 
+
 }
 
 
 function draw() {
 
 }
-

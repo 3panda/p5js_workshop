@@ -1,40 +1,32 @@
-var xMove1;                            //動かすArrow1のx座標の変数1
-var yMove1;                            //動かすArrow1のy座標の変数1
-var xMove2;                            //動かすArrow2のx座標の変数2
-var yMove2;                            //動かすArrow2のy座標の変数2
 
 function setup() {
 	createCanvas(500, 400);
 	background(51,54,49);
 	noStroke();
+	background(51,54,49);
+	
+	fill(137, 34, 138);                           //塗り
+	ellipse(50, 200, 20, 20);                     //中心の○
+	ellipse(50 + 20,   200 - 20,   20, 20);       //中心の○から,○1つ分右,○1つ分斜め上
+	ellipse(50 + 20*2, 200 - 20*2, 20, 20);       //中心の○から,○2つ分右,○2つ分斜め上
+	ellipse(50 + 20,   200 + 20,   20, 20);       //中心の○から,○1つ分右,○1つ分斜め下
+	ellipse(50 + 20*2,  200 + 20*2, 20, 20);      //中心の○から,○2つ分左,○2つ分斜め下
 
-	//動かすArrow1の初期設定
-	xMove1  = width/2;
-	yMove1  = height/2;
-
-	//Arrow2の初期設定
-	xMove2  = width/2;
-	yMove2  = height/2;
+	//Arrow関数
+	Arrow(200, 200, 30, color(215, 0, 58));
+	
+	//Arrow関数
+	Arrow(370, 200, 50, color(218, 82, 56));
 
 }
 
 
 function draw() {
-	background(51,54,49);
-	
-	//動かさないArrow
-  Arrow(width/2, height/2, 20, color(137, 34, 138));         //Arrow
-
-	//動かすArrow1
-	xMove1 = xMove1 - 3;                                       //x座標移動量を追加
-	Arrow(xMove1, yMove1, 20, color(215, 0, 58));              //Arrow
-
-	//動かすArrow2
-	xMove2 = xMove2 + 3;                                       //x座標移動量を追加
-	Arrow(xMove2, yMove2, 20, color(218, 82, 56));             //Arrow
 
 }
 
+//5つの○を描画する処理を関数Arrowにする
+//引数を設定しX,Y座標,直径,塗りの色を指定出来るようにする
 
 //Arrow
 function Arrow(_x, _y, _d, _color) {

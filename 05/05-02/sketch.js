@@ -1,6 +1,3 @@
-var x;                                 //Arrowのx座標の変数
-var y;                                 //Arrowのy座標の変数
-var d;                                 //Arrowの○の直径の変数
 
 function setup() {
 	createCanvas(500, 400);
@@ -8,13 +5,10 @@ function setup() {
 	noStroke();
 	background(51,54,49);
 	
-	//変数に値を入れる
-	x = width/2;                         //画面の幅の半分=中心
-	y = height/2;　　　　　　　　　      //画面の縦の半分=中心
-	d =20;
+  Arrow(width/2, height/2, 20, color (137, 34, 138));
+	//width/2→画面の幅の半分=中心
+	//height/2→画面の縦の半分=中心
 	
-  Arrow(x, y, d, color (137, 34, 138));
-
 }
 
 

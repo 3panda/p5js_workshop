@@ -47,15 +47,15 @@ function draw() {
 	background(51,54,49);
 	
 	//動かさないArrow
-  Arrow(x, y, d, c);                       //Arrow
+  Arrow(x, y, d, color(137, 34, 138));                       //Arrow
 
 	//動かすArrow1
-	xMove1 = xMove1 + xSpeed1;            //x座標移動量を追加
-	Arrow(xMove1, yMove1, d1, c1);            //Arrow
+	xMove1 = xMove1 + xSpeed1;                                 //x座標移動量を追加
+	Arrow(xMove1, yMove1, d1, color(215, 0, 58));              //Arrow
 	
 	//動かすArrow2
-	xMove2 = xMove2 + xSpeed2;            //x座標移動量を追加
-	Arrow(xMove2, yMove2, d2, c2);            //Arrow
+	xMove2 = xMove2 + xSpeed2;                                 //x座標移動量を追加
+	Arrow(xMove2, yMove2, d2, color(218, 82, 56));             //Arrow
 
 }
 

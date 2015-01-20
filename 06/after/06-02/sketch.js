@@ -8,6 +8,7 @@ var ySpeed;　　　//オブジェクトのy座標の移動速度
 function setup() {
 	createCanvas(500, 400);
 	background(51,54,49);
+	noStroke();
 	fill(204, 101, 192);
 	noStroke();
 
@@ -21,7 +22,7 @@ function setup() {
 }
 
 function draw() {
-	background(200);
+	background(51,54,49);
 	ellipse(x, y, d, d);
 	x = x + xSpeed;
 	y = y + ySpeed;

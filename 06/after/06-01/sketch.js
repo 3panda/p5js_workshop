@@ -34,6 +34,7 @@ function draw() {
 }
 
 
+//マウスをクリックした時
 //mouseClicked
 function mouseClicked() {
 	

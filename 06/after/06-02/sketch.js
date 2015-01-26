@@ -31,7 +31,7 @@ function draw() {
 }
 
 
-//マウスがクリックしながら動いている時
+//マウスが動いている時
 //touchMoved
 function touchMoved() {
 	//R,G,Bそれぞれに変化の値を加算

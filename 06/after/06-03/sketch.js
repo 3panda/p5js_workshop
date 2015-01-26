@@ -5,14 +5,14 @@ var rgbStep  = [];   //R,G,Bの変化の値を格納する配列
 //setup
 function setup() {
 	createCanvas(500, 400);
-	background(51,54,49);
+	//background(51,54,49);
 	
 	//初期化
 	colorSet   = color(0, 204, 198); //基本の色情報をcolorSetに設定
 	colorValue[0] = red(colorSet);   //colorSetからRの情報を取得
 	colorValue[1] = green(colorSet); //colorSetからGの情報を取得
 	colorValue[2] = blue(colorSet);　//colorSetからBの情報を取得
-	rgbStep 　　　= [4, 4, 0];　　　 // R,G,Bの変化の値を配列に指定 R,G,Bの順番
+	rgbStep       = [4, 4, 0];       // R,G,Bの変化の値を配列に指定 R,G,Bの順番
 }
 
 
@@ -24,9 +24,10 @@ function draw() {
 }
 
 
-//マウスがクリックしながら動いている時
+//マウスが動いている時
 //touchMoved
 function touchMoved() {
+	console.log("tm");
 	//配列colorValueのindexの数を数えておく
 	var colorValueMax =  colorValue.length;
 

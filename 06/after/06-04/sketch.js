@@ -76,7 +76,7 @@ function Ball(_x, _y, _d, _color) {
 
 //sin()
 //http://p5js.org/reference/#/p5/sin
-//sinの角度を計算する
+//sin -1〜1の値を返す
 //
 //sin(n)
 //-1 〜 1の範囲の数が返される

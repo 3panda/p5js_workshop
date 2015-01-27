@@ -3,9 +3,7 @@ var d;     //オブジェクトの直径　Diameter の d
 var r;     //オブジェクトの半径  Radius の r
 var x;     //オブジェクトのx座標
 var y;     //オブジェクトのy座標
-var nx;    //ユーザーのx座標
-var ny;    //ユーザーのy座標
-var delay; //遅延させる値
+
 
 function setup() {
 	createCanvas(500, 400);
@@ -18,26 +16,10 @@ function setup() {
 	x = width / 2;
 	y = height / 2;
 
-	//マウスをクリックされるまではx,y座標の値を入れる
-	nx = x;
-	ny = y;
-
-	//遅れてオブジェクトが動く値を指定
-	delay = 16;
-
 }
 
 function draw() {
 	background(51,54,49);
-
-	//sinを利用してオブジェクトの直径を拡大縮小させる
-	d = d + sin(frameCount / 15);
-
-	//オブジェクトとユーザーの距離を計算
-	//遅延させる値(delay)の値で割り加算し、徐々に近づかせる
-	x += (nx-x) / delay;
-	y += (ny-y) / delay;
-	
 	Ball(x, y, d, color(0, 204, 198));
 
 }
@@ -46,9 +28,7 @@ function draw() {
 //マウスをクリックした時
 //mouseClicked
 function mouseClicked() {
-	//ユーザーのx,y座標を取得
-	nx = mouseX;
-	ny = mouseY;
+
 }
 
 //Ball

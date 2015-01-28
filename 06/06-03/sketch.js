@@ -21,6 +21,7 @@ function setup() {
 	stepRed    = 4;                  //Rの変化の値を指定
 	stepGreen  = 4;                  //Gの変化の値を指定
 	stepBlue   = 0;                  //Bの変化の値を指定
+
 }
 
 
@@ -39,7 +40,7 @@ function touchMoved() {
 	greenValue = greenValue + stepGreen;
 	blueValue  = blueValue  + stepBlue;
 
-	
+
 	//R,G,Bの値は最大値を超えたら加算、最小値を下回ったら減算
 	//R
 	if (redValue > 255 || redValue < 0) {
@@ -57,12 +58,3 @@ function touchMoved() {
 	}
 
 }
-
-
-/*
-	console.log("R:" + colorValue[0]);
-	console.log("G:" + colorValue[1]);
-	console.log("B:" + colorValue[2]);
-
-*/
-

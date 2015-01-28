@@ -21,6 +21,7 @@ function setup() {
 	stepRed    = 4;                  //Rの変化の値を指定
 	stepGreen  = 4;                  //Gの変化の値を指定
 	stepBlue   = 0;                  //Bの変化の値を指定
+
 }
 
 

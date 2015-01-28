@@ -5,7 +5,7 @@ var x;     //オブジェクトのx座標
 var y;     //オブジェクトのy座標
 var nx;    //ユーザーのx座標
 var ny;    //ユーザーのy座標
-var delay; //遅延させる値
+var delay; //オブジェクトの動きを遅延させる値
 
 function setup() {
 	createCanvas(500, 400);
@@ -23,18 +23,18 @@ function setup() {
 	ny = y;
 
 	//遅れてオブジェクトが動く値を指定
-	delay = 16;
+	delay = 15;
 
 }
 
 function draw() {
 	background(51,54,49);
-
 	//sinを利用してオブジェクトの直径を拡大縮小させる
 	d = d + sin(frameCount / 15);
-
+	
 	//オブジェクトとユーザーの距離を計算
-	//遅延させる値(delay)の値で割り加算し、徐々に近づかせる
+	//遅延させる値(delay)の値で割った値を加算
+	//繰り替えす事で徐々に近づける
 	x += (nx-x) / delay;
 	y += (ny-y) / delay;
 	
@@ -59,46 +59,40 @@ function Ball(_x, _y, _d, _color) {
 }
 
 
-//mouseX
+//#mouseX
 //http://p5js.org/reference/#/p5/mouseX
 //マウスのx座標
 //
-//mouseY
+//#mouseY
 //http://p5js.org/reference/#/p5/mouseY
 //マウスのy座標
 
-//frameCount()
+//#frameCount()
 //http://p5js.org/reference/#/p5/frameCount
 //フレーム数をカウントする
 //
-//frameRate()
-//フレームレイトをしていする。指定しなければ30fps(フレーム/秒)となる
+//#frameRate()
+//フレームレイトを指定する。指定しなければ30fps(フレーム/秒)となる
 
-//sin()
+//#sin()
 //http://p5js.org/reference/#/p5/sin
-//sin -1〜1の値を返す
+
+//#オブジェクトの拡大の部分
+//##d = d + sin(frameCount / 15)
+//dに毎フレームsin(frameCount / 15)で計算された値を加算
 //
-//sin(n)
-//-1 〜 1の範囲の数が返される
+//##sin(frameCount/15)の部分
+//sin(frameCount)の場合、一定の間隔で1〜-1の値が返るので
+//dの変化はd+1〜d-1（d = 50;の場合は49〜51の間）になる
 //
-//ex)
-//n = 1
-//0.8414709848078965
-//n = 2
-//0.9092974268256817
-//n = 3
-//0.1411200080598672
-//n = 4
-//-0.7568024953079282
-//n = 5
-//-0.9589242746631385
-//n = 6
-//-0.27941549819892586
-//n = 7
-//0.6569865987187891
+//任意の値（今回は15）で割る事でフレームが進むタイミングとずれた状態で
+//値がdに加算されるためdの値はd + 1以上とd -1以下に
+//なり変化が大きくなる
+//frameCountを割る数字を大きくする事で変化は大きくなるが
+//変化はゆっくりになる
 
 
-//console.log("test:" + test);
+//#console.log
 //console.log("nx:" + nx);
 //console.log("ny:" + ny);
 //console.log("x:" + x);
